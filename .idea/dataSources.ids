@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails reporting-robberies-haml: development" uuid="ef8d7804-0704-460d-b8b1-69f20f337993">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails reporting-robberies-haml: test" uuid="39d5a3b9-911d-48ec-809a-55c3bfb10727">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails reporting-robberies-haml: production" uuid="2f832473-f0a7-4923-98ec-58578fc7c43b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

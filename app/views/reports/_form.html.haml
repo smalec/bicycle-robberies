@@ -1,0 +1,48 @@
+= form_for @report do |f|
+  - if @report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
+      %ul
+        - @report.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p= "Description"
+  .field
+    = f.text_area :description
+
+  %br
+  %h3= "Reporter data"
+  = f.fields_for :reporter do |reporter_attributes|
+    .field
+      = reporter_attributes.label :name
+      = reporter_attributes.text_field :name
+
+    .field
+      = reporter_attributes.label :last_name
+      = reporter_attributes.text_field :last_name
+
+    .field
+      = reporter_attributes.label :sex
+      = reporter_attributes.radio_button :sex, "Male", checked: true
+      = reporter_attributes.label :male
+      = reporter_attributes.radio_button :sex, "Female"
+      = reporter_attributes.label :female
+
+    .field
+      = reporter_attributes.label :email
+      = reporter_attributes.text_field :email
+
+    %br
+    %h3= "Bicycle data"
+    = reporter_attributes.fields_for :bicycle do |bicycle_attributes|
+      .field
+        = bicycle_attributes.label :producer
+        = bicycle_attributes.collection_select :producer_id, @producers, :id, :name
+        = link_to 'Add producer', producers_path
+
+      .field
+        = bicycle_attributes.label :frame_number
+        = bicycle_attributes.text_field :frame_number
+  %br
+  .actions
+    = f.submit 'Save'

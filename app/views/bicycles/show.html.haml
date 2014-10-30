@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Producer:
+  = @bicycle.producer
+%p
+  %b Frame number:
+  = @bicycle.frame_number
+
+= link_to 'Edit', edit_bicycle_path(@bicycle)
+\|
+= link_to 'Back', bicycles_path

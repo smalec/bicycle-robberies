@@ -1,0 +1,26 @@
+= link_to 'New Report', new_report_path
+%h1 Reported robberies
+
+- @reports.each do |report|
+  %h3 Report ##{report.id}
+  %p
+    %b By:
+    = report.reporter.name
+    = report.reporter.last_name
+    (#{report.reporter.sex}, #{report.reporter.email})
+
+  %p
+    %b Stolen bicycle:
+    = report.bicycle.producer.name
+    (Frame number: #{report.bicycle.frame_number})
+
+  %fieldset{:style => "width: 350px"}
+    %legend Description
+    = report.description
+
+  %p
+    = link_to 'Edit', edit_report_path(report)
+    |
+    = link_to 'Destroy', report, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br

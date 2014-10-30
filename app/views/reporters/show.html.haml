@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @reporter.name
+%p
+  %b Last name:
+  = @reporter.last_name
+%p
+  %b Sex:
+  = @reporter.sex
+%p
+  %b Email:
+  = @reporter.email
+
+= link_to 'Edit', edit_reporter_path(@reporter)
+\|
+= link_to 'Back', reporters_path

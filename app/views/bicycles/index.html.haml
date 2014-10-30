@@ -1,0 +1,21 @@
+%h1 Listing bicycles
+
+%table
+  %tr
+    %th Producer
+    %th Frame number
+    %th
+    %th
+    %th
+
+  - @bicycles.each do |bicycle|
+    %tr
+      %td= bicycle.producer
+      %td= bicycle.frame_number
+      %td= link_to 'Show', bicycle
+      %td= link_to 'Edit', edit_bicycle_path(bicycle)
+      %td= link_to 'Destroy', bicycle, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Bicycle', new_bicycle_path
