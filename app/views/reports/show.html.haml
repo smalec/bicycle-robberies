@@ -3,6 +3,22 @@
 %p
   %b Description:
   = @report.description
+%p
+  %b Reporter name:
+  = @report.reporter.name
+  = @report.reporter.last_name
+%p
+  %b Reporter sex:
+  = @report.reporter.sex
+%p
+  %b Reporter email:
+  = @report.reporter.email
+%p
+  %b Bicycle producer:
+  = @report.bicycle.producer.name
+%p
+  %b Frame number:
+  = @report.bicycle.frame_number
 
 = link_to 'Edit', edit_report_path(@report)
 \|
